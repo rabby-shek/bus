@@ -3,6 +3,7 @@
 var rows = prompt("enter rows:");
 var cols = prompt("enter colums");
 
+
 var geek = new Array(rows);
 
 
@@ -33,19 +34,34 @@ for(var i =0 ; i < rows ; i++){
 }
 
 //display
+var value = prompt("enter after which column you want to give space");
 document.write("<table border = '1px'>");
 for(var i =0 ; i < rows ; i++){
     document.write("<tr>");
     for(var j=0;j<cols;j++){
-        if(j==2){document.write("<td>" + "&nbsp;&nbsp;&nbsp; " + "</td>");
-        if(j==3){document.write("<td>" +"&nbsp;&nbsp;&nbsp; " + "</td>");}
-     
+        if(j==value){
+            if(i==rows-1){
+                document.write("<td>" + geek[i][j] + "</td>");
+                continue;
+            }
+            
+        //if(j==3){document.write("<td>" +"&nbsp;&nbsp;&nbsp; " + "</td>");}
+     document.write("<td>" + "&nbsp;&nbsp;&nbsp; " + "</td>");
+    
+    
+    
+            
     
     }
+
+ 
+
 
         document.write("<td>" + geek[i][j] + "</td>");
 
     }
+
+    
    // document.write("<td rowspan=\"" + rows + ">"+ geek[0][2] + "</td");
     document.write("<tr>");
 
