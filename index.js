@@ -37,6 +37,11 @@ document.write("<table border = '1px'>");
 for(var i =0 ; i < rows ; i++){
     document.write("<tr>");
     for(var j=0;j<cols;j++){
+        if(j==2){document.write("<td>" + "&nbsp;&nbsp;&nbsp; " + "</td>");
+        if(j==3){document.write("<td>" +"&nbsp;&nbsp;&nbsp; " + "</td>");}
+     
+    
+    }
 
         document.write("<td>" + geek[i][j] + "</td>");
 
@@ -53,7 +58,7 @@ document.write("</table>");
 
 
 //adding row
-var addRow = prompt("enter where you wantto add space")
+
 
 
 
