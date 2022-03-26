@@ -41,20 +41,24 @@ for(var i =0 ; i < rows ; i++){
     for(var j=0;j<cols;j++){
         if(j==value){
             if(i==rows-1){
-                document.write("<td>" + geek[i][j] + "</td>");
-                continue;
+                if(geek[i][j] ==  letters[i] + j){
+                    
+                    document.write("<td>" +  letters[i] + [j]   + "</td>" );
+                    continue;
+
+                }
+
+               
+                document.write("<td>" + geek[i][j]   + "</td>" );
+
             }
             
         //if(j==3){document.write("<td>" +"&nbsp;&nbsp;&nbsp; " + "</td>");}
      document.write("<td>" + "&nbsp;&nbsp;&nbsp; " + "</td>");
-    
-    
-    
-            
+   
+     continue;
     
     }
-
- 
 
 
         document.write("<td>" + geek[i][j] + "</td>");
