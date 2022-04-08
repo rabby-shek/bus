@@ -1,12 +1,27 @@
 //defining 2d array
 
-var rows = prompt("enter rows:");
+//var rows = prompt("enter rows:");
+var rows = 20;
+
 if(rows>27){
          alert("you have entered rows more than 26.Please enter less than 27");
      }
      else{
-        var cols = prompt("enter colums");
-        var value = prompt("enter after which column you want to give space");
+        //var cols = prompt("enter colums");
+        var cols = 4;
+        
+       // var space = prompt("Enter how many space do u want: ");
+       var spaceQuantity = parseInt(prompt("how many space :"));
+       var spacePosition= [];
+       for(var ptr = 0 ; ptr<spaceQuantity;ptr++){
+        spacePosition[ptr] = prompt("enter where u want space:");
+
+       }
+       console.log(spacePosition);
+        
+
+
+       
 
      }
 
@@ -25,7 +40,7 @@ for (var i =0 ;i<rows;i++){
 }
 
 
-//alphabet printing method 
+//alphabet printing method
 
 var letters = [];
 for (var i = 65; i < 92; i++) {
@@ -38,12 +53,15 @@ elem.innerHTML = letters.join(',');
 
 //input array
 
-
 for(var i =0 ; i < rows ; i++){
-    for(var j=0;j<cols;j++){
+    for(var j=0;j<(cols + spaceQuantity);j++){
         geek[i][j]= letters[i] + j ;
     }
 }
+console.log(geek);
+
+
+
 
 //display
 
@@ -51,7 +69,7 @@ document.write("<table border = '1px'>");
 for(var i =0 ; i < rows ; i++){
     document.write("<tr>");
     for(var j=0;j<cols;j++){
-        if(j==value){
+        if(j==spacePosition[ptr]){
             if(i==rows-1){
                 if(geek[i][j] ==  letters[i] + j){
                     
