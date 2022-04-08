@@ -55,9 +55,14 @@ elem.innerHTML = letters.join(',');
 
 for(var i =0 ; i < rows ; i++){
     for(var j=0;j<(cols + spaceQuantity);j++){
-        geek[i][j]= letters[i] + j ;
+       
+     
+            geek[i][j]= letters[i] + j ;
+
+        }
+       
     }
-}
+
 console.log(geek);
 
 
@@ -68,35 +73,27 @@ console.log(geek);
 document.write("<table border = '1px'>");
 for(var i =0 ; i < rows ; i++){
     document.write("<tr>");
-    for(var j=0;j<cols;j++){
+    for(var j=0;j<cols+spaceQuantity;j++){
         if(j==spacePosition[ptr]){
-            if(i==rows-1){
-                if(geek[i][j] ==  letters[i] + j){
+           
+           console.log( geek[i][j] .fill(0, [i], [j]));
                     
                     document.write("<td>" +  letters[i] + [j]   + "</td>" );
                     continue;
 
                 }
+                else{
 
                
                 document.write("<td>" + geek[i][j]   + "</td>" );
 
             }
-            
-     document.write("<td>" + "&nbsp;&nbsp;&nbsp; " + "</td>");
-   
-     continue;
-    
-    }
-
-
-        document.write("<td>" + geek[i][j] + "</td>");
 
     }
 
     
  
-    document.write("<tr>");
+    document.write("</tr>");
 
 
 }
@@ -107,7 +104,7 @@ document.write("</table>");
 
 
 
-//}
+
 
 
 
