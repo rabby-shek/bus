@@ -1,14 +1,16 @@
-//defining 2d array
 
 //var rows = prompt("enter rows:");
-var rows = 20;
+var rows = parseInt(prompt("enter how many rows do u want: "));
 
 if(rows>27){
          alert("you have entered rows more than 26.Please enter less than 27");
+         window.location.reload();
+         
      }
+
      else{
         //var cols = prompt("enter colums");
-        var cols = 4;
+        var cols = parseInt(prompt("Enter how many sits do u want : "));
         
        // var space = prompt("Enter how many space do u want: ");
        var spaceQuantity = parseInt(prompt("how many space :"));
@@ -74,11 +76,15 @@ document.write("<table border = '1px'>");
 for(var i =0 ; i < rows ; i++){
     document.write("<tr>");
     for(var j=0;j<cols+spaceQuantity;j++){
-        if(j==spacePosition[ptr]){
+        if(spacePosition.some(space => space ==j)){
+            if(i== rows-1){
+                document.write("<td>" +   geek[i][j]  + "</td>" );
+                continue;
+            }
            
-           console.log( geek[i][j] .fill(0, [i], [j]));
-                    
-                    document.write("<td>" +  letters[i] + [j]   + "</td>" );
+            
+         
+                    document.write("<td>" +  "&nbsp;&nbsp;&nbsp;"  + "</td>" );
                     continue;
 
                 }
@@ -101,13 +107,3 @@ for(var i =0 ; i < rows ; i++){
 
 
 document.write("</table>");
-
-
-
-
-
-
-
-
-
-
